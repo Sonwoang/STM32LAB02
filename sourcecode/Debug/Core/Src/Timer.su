@@ -1,0 +1,2 @@
+Timer.c:15:6:setTimer	16	static
+Timer.c:20:6:TimerRun	16	static
