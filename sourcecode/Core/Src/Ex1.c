@@ -24,7 +24,7 @@ const uint8_t segmentValues[10] = {
     0b1111011
 };
 
-void SegLedDisplay(int num) {
+void display7SEG(int num) {
     if (num < 0 || num > 9) return;
 
     uint8_t segment = segmentValues[num];
@@ -49,13 +49,13 @@ void Ex1() {
         case DIGIT1:
             HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, SET);
             status = DIGIT2;
-            SegLedDisplay(1);
+            display7SEG(1);
             HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, RESET);
             break;
         case DIGIT2:
             HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, SET);
             status = DIGIT1;
-            SegLedDisplay(2);
+            display7SEG(2);
             HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, RESET);
             break;
     }
